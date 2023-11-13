@@ -21,7 +21,7 @@
                 </StackLayout>
             </Frame>
 
-            <Button Text="Forgot Password?" Clicked="OnForgotPasswordButtonClicked" BackgroundColor="Transparent" TextColor="Black" FontSize="16" HorizontalOptions="Center" Margin="0,20,0,0" />
+            <Button Text="Create Account Now!" Clicked="CreateAccountButtonClicked" BackgroundColor="Transparent" TextColor="Black" FontSize="16" HorizontalOptions="Center" Margin="0,20,0,0" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

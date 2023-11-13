@@ -11,12 +11,16 @@ public partial class MainPage : ContentPage
         {
             string username = UsernameEntry.Text;
             string password = PasswordEntry.Text;
-
+            if (username == null || password == null)
+            {
+            DisplayAlert("Грешка!", "Моля, въведете име и парола!", "OК");
+            return;
+            }
             // Perform your login logic here, e.g., validate credentials, navigate to the main page, or show an error message.
         }
-         private void OnForgotPasswordButtonClicked(object sender, EventArgs e)
+         private async void CreateAccountButtonClicked(object sender, EventArgs e)
          {
-        // Implement the logic for the "Forgot Password" action here
+           await Navigation.PushAsync(new RegisterPage());
          }
 }
 
