@@ -1,4 +1,6 @@
-﻿namespace BulgariaTimeLine;
+﻿using BulgariaTimeLine.Services;
+
+namespace BulgariaTimeLine;
 
 public partial class App : Application
 {
@@ -8,4 +10,18 @@ public partial class App : Application
 
 		MainPage = new AppShell();
 	}
+    static DatabaseHelper database;
+
+    // Create the database connection as a singleton.
+    public static DatabaseHelper Database
+    {
+        get
+        {
+            if (database == null)
+            {
+                database = new DatabaseHelper();
+            }
+            return database;
+        }
+    }
 }
