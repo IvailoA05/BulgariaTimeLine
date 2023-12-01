@@ -29,10 +29,9 @@ public partial class MainPage : ContentPage
             }
             if (username == "admin" && password == "1234567")
             {
-            // Redirect to HomePage for user with id = 1
             await Navigation.PushAsync(new HomePage()).ConfigureAwait(false);
             }
-            if (_databaseHelper.ValidateUser(username, password))
+            else if (_databaseHelper.ValidateUser(username, password))
             {
             // Successful login, navigate to the main page
             await Navigation.PushAsync(new HomePage()).ConfigureAwait(false);

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BulgariaTimeLine.OngalaFightPage"
+             Title="Битката при Онгъла">
+    <ScrollView> 
+    <StackLayout Padding="16">
+
+        
+            <Label Text="Битката при Онгъла"
+               FontSize="28"
+               FontAttributes="Bold"
+               Margin="0,0,0,10"
+               TextColor="Black"/>
+
+            <Label Text="680г."
+               FontSize="24"
+               FontAttributes="Bold"
+               Margin="0,0,0,10"
+               TextColor="Black"/>
+
+            
+        <Image Source="ongala_fight_asparuh.jpg" 
+               Aspect="AspectFill"
+               HeightRequest="200"
+               Margin="0,0,0,10"/>
+
+        
+            <Label Text="Причини:"
+       FontAttributes="Bold"
+       FontSize="20"
+       TextColor="Black"/>
+            <Label Text="През 680 г., хан Аспарух, използвайки войните на Византия с арабите, преминава река Дунав и нахлува в Малка Скития. Императорът Константин IV организира поход срещу прабългарските племена."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"/>
+
+            <Label Text="Военни действия:"
+       FontAttributes="Bold"
+       FontSize="20"
+       TextColor="Black"/>
+            <Label Text="Аспарух се установява в Мизия, а войските на Константин IV започват действия. Блатистата местност намалява силата на удара. Прабългарската армия се оттегля към укрепление на остров Певки. Византийците обсаждат лагера, но императорът напуска бойното поле, повлиявайки негативно духа на войската."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"/>
+
+            <Label Text="Следствия:"
+       FontAttributes="Bold"
+       FontSize="20"
+       TextColor="Black"/>
+            <Label Text="Прабългарите успешно отбраняват лагера, което принуждава византийците на отстъпление. Победата при Онгъла е първа стъпка към създаването на Дунавска България, водейки до мирен договор с Византия в Константинопол през 681 г. Това залага началото на Първо българско царство."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"/>
+
+
+        </StackLayout>
+   </ScrollView>
+</ContentPage>

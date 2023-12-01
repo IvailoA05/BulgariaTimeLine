@@ -23,9 +23,20 @@ namespace BulgariaTimeLine.Services
         }
         public bool ValidateUser(string username, string password)
         {
-            var user = Database.Table<User>().ToList();
-            Console.WriteLine(String.Join("", user));
-            return false;
+            var user = Database.Table<User>().FirstOrDefault(u => u.Username == username && u.Password == password);
+
+            if (user != null)
+            {
+                // User with the provided credentials exists
+                Console.WriteLine("User validated: " + user.Username);
+                return true;
+            }
+            else
+            {
+                // No user found with the provided credentials
+                Console.WriteLine("Invalid credentials");
+                return false;
+            }
         }
         public List<User> GetUsers()
         {
