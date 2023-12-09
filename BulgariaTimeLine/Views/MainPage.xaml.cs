@@ -29,7 +29,7 @@ public partial class MainPage : ContentPage
             }
             if (username == "admin" && password == "1234567")
             {
-            await Navigation.PushAsync(new HomePage()).ConfigureAwait(false);
+            await Navigation.PushAsync(new AdminPage()).ConfigureAwait(false);
             }
             else if (_databaseHelper.ValidateUser(username, password))
             {

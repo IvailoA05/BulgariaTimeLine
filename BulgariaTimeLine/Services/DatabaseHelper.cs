@@ -21,6 +21,15 @@ namespace BulgariaTimeLine.Services
         {
             Database.Insert(user);
         }
+        public void UpdateUser(User user)
+        {
+            Database.Update(user);
+        }
+        public void DeleteUser(User user)
+        {
+            Database.Delete(user);
+        }
+
         public bool ValidateUser(string username, string password)
         {
             var user = Database.Table<User>().FirstOrDefault(u => u.Username == username && u.Password == password);
