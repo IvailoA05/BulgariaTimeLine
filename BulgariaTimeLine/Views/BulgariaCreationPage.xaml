@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BulgariaTimeLine.BulgariaCreationPage"
+             Title="Създаване на Дунавска България">
+    <ScrollView>
+        <StackLayout Padding="16">
+
+
+            <Label Text="Създаване на Дунавска България"
+               FontSize="28"
+               FontAttributes="Bold"
+               Margin="0,0,0,10"
+               TextColor="Black"/>
+
+            <Label Text="681г."
+               FontSize="24"
+               FontAttributes="Bold"
+               Margin="0,0,0,10"
+               TextColor="Black"/>
+
+
+            <Image Source="asparuh_danube_681.jpg" 
+               Aspect="AspectFill"
+               HeightRequest="200"
+               Margin="0,0,0,10"/>
+
+
+            <Label Text="През 681 г., след разпадането на Велика България, хан Аспарух обединява част от прабългарските племена в Бесарабия и Добруджа с местните славянски племена, създавайки Първата българска държава. Тази нова формация простира своите граници между Стара планина на юг и река Дунав на север, известна като Дунавска България."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Label Text="Хан Аспарух, основателят на държавата, избира за столица Плиска. Неговото ръководство се установява чрез боилите, докато народите на българите и славяните, въпреки различията, продължават да съществуват като отделни племена. Те обработват земята си, но и участват във войската по време на войни."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Label Text="През 680 г. прабългарите, под командата на Аспарух, постигат решителна победа в битката при Онгъла. Този триумф води до подписването на мирен договор, чрез който Византия признава създадената държава и се задължава да заплаща данък. Така Първата българска държава утвърждава своето присъствие в региона и управлението на хан Аспарух става отличителен елемент в историята на този период."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Image Source="bulgaria_681.jpg" 
+       Aspect="AspectFit"
+       WidthRequest="300"
+       HeightRequest="215"
+       Margin="0,0,0,10"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

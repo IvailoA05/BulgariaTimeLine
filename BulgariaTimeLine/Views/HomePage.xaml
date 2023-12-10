@@ -10,17 +10,29 @@
         <!-- Button 1 -->
         <Frame BackgroundColor="White" CornerRadius="5" HasShadow="True" Margin="0,0,0,10">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Tapped="Button1Tapped" />
+                <TapGestureRecognizer Tapped="btnOngalafight" />
             </Frame.GestureRecognizers>
             <StackLayout>
                 <Label Text="Битката при Онгъла" TextColor="Black" BackgroundColor="White" FontSize="20"/>
                 <Label Text="680г." FontAttributes="Bold" TextColor="Black" FontSize="30"/>
-                <Label Text="Description 1" TextColor="Black" />
+                <Label Text="Тагове: Хан Аспарух, Константин IV" TextColor="Black" />
+            </StackLayout>
+        </Frame>
+        <Frame BackgroundColor="White" CornerRadius="5" HasShadow="True" Margin="0,0,0,10">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="btnBulgariaCreation" />
+            </Frame.GestureRecognizers>
+            <StackLayout>
+                <Label Text="Създаване на Дунавска България" TextColor="Black" BackgroundColor="White" FontSize="20"/>
+                <Label Text="681г." FontAttributes="Bold" TextColor="Black" FontSize="30"/>
+                <Label Text="Тагове: Хан Аспарух, Плиска, прабългари" TextColor="Black" />
             </StackLayout>
         </Frame>
 
         <!-- Line Separator -->
         <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+
+        <Label Text="VIII Век" FontAttributes="Bold" FontSize="24" TextColor="Black" Margin="10,0,0,10"/>
 
         <!-- Button 2 -->
         <Frame BackgroundColor="White" CornerRadius="5" HasShadow="True" Margin="0,10,0,10">
@@ -34,6 +46,5 @@
             </StackLayout>
         </Frame>
 
-        <!-- Add more buttons with titles and descriptions as needed -->
     </VerticalStackLayout>
 </ContentPage>

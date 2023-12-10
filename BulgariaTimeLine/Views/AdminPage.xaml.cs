@@ -16,7 +16,7 @@ public partial class AdminPage : ContentPage
     private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
         var user = (User)e.Item;
-        var action = await DisplayActionSheet("Select and option", "Cancel", null, "Edit", "Delete");
+        var action = await DisplayActionSheet("Select an option", "Cancel", null, "Edit", "Delete");
 
         switch (action)
         {
