@@ -15,16 +15,10 @@ public partial class MainPage : ContentPage
         {
             string username = UsernameEntry.Text;
             string password = PasswordEntry.Text;
-            List<User> message = _databaseHelper.GetUsers();
-            string secondMessage = "";
-   
-            foreach (var user in message)
-            {
-            secondMessage += user.Username;
-            }
+ 
             if (username == null || password == null)
             {
-            await DisplayAlert("Грешка!",secondMessage, "OК");
+            await DisplayAlert("Грешка!","Моля попълнете всички полета!", "OК");
             return;
             }
             if (username == "admin" && password == "1234567")
@@ -33,12 +27,10 @@ public partial class MainPage : ContentPage
             }
             else if (_databaseHelper.ValidateUser(username, password))
             {
-            // Successful login, navigate to the main page
             await Navigation.PushAsync(new HomePage()).ConfigureAwait(false);
             }
             else
             {
-            // Display an error message for unsuccessful login
             await DisplayAlert("Грешка!", "Невалидно име или парола!", "OK").ConfigureAwait(false);
             }
         }

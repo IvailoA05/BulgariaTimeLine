@@ -5,18 +5,18 @@
              Title="AdminPage">
     <StackLayout Padding="20">
         <!-- Entry for Username -->
-        <Entry x:Name="usernameEntryField" Placeholder="Username" Text="{Binding Username}" Margin="0,0,0,10" />
+        <Entry x:Name="usernameEntryField" Placeholder="Име или имейл" Text="{Binding Username}" Margin="0,0,0,10" />
 
         <!-- Entry for Password -->
-        <Entry x:Name="passwordEntryField" Placeholder="Password" Text="{Binding Password}" IsPassword="True" Margin="0,0,0,10" />
+        <Entry x:Name="passwordEntryField" Placeholder="Парола" Text="{Binding Password}" IsPassword="True" Margin="0,0,0,10" />
         
 
         <!-- Save Button -->
-        <Button x:Name="saveButton" Text="Save" Clicked="SaveButtonClicked" BackgroundColor="#32a84c" TextColor="White" CornerRadius="10" FontSize="18" Margin="0,20,0,10" WidthRequest="100" />
+        <Button x:Name="saveButton" Text="Запази" Clicked="SaveButtonClicked" BackgroundColor="#32a84c" TextColor="White" CornerRadius="10" FontSize="18" Margin="0,20,0,10" WidthRequest="100" />
 
         <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
         
-        <Label Text="Registered Accounts" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20,0,10"/>
+        <Label Text="Регистрирани профили" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20,0,10"/>
 
         <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
         

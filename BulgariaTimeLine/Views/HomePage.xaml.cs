@@ -17,7 +17,6 @@ public partial class HomePage : ContentPage
 
     private void Button2Tapped(object sender, EventArgs e)
     {
-        // Handle the tap event for Button 2
-        // Add your logic here
+        
     }
 }
