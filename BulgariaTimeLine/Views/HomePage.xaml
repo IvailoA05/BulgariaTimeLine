@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BulgariaTimeLine.HomePage"
              Title="HomePage">
-    <VerticalStackLayout>
+    <VerticalStackLayout x:Name="stackLayout">
+        <SearchBar x:Name="searchBar" Placeholder="Търси" TextChanged="OnSearchTextChanged" Margin="10,0,10,10"/>
         <!-- Chapter Title -->
         <Label Text="VII Век" FontAttributes="Bold" FontSize="24" TextColor="Black" Margin="10,0,0,10"/>
 
@@ -45,6 +46,5 @@
                 <Label Text="Description 2" TextColor="Black" />
             </StackLayout>
         </Frame>
-
     </VerticalStackLayout>
 </ContentPage>
