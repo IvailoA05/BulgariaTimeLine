@@ -2,10 +2,11 @@ namespace BulgariaTimeLine;
 
 public partial class HomePage : ContentPage
 {
-	public HomePage()
-	{
-		InitializeComponent();
-	}
+    public HomePage()
+    {
+        InitializeComponent();
+    }
+
     private void OnSearchTextChanged(object sender, TextChangedEventArgs e)
     {
         string searchQuery = e.NewTextValue;
@@ -13,8 +14,12 @@ public partial class HomePage : ContentPage
         // Filter the content based on the search query
         FilterContent(searchQuery);
     }
+
     private void FilterContent(string searchQuery)
     {
+        // Flag to determine if there is any match
+        bool hasMatch = false;
+
         // Iterate through the children of the VerticalStackLayout
         foreach (var child in stackLayout.Children)
         {
@@ -36,6 +41,9 @@ public partial class HomePage : ContentPage
                             // Update the visibility of the Frame based on the search result
                             frame.IsVisible = isMatch;
 
+                            // Update the flag
+                            hasMatch = hasMatch || isMatch;
+
                             // Break the loop if there is a match to avoid unnecessary iterations
                             if (isMatch)
                                 break;
@@ -48,6 +56,9 @@ public partial class HomePage : ContentPage
                             // Update the visibility of the Frame based on the search result
                             frame.IsVisible = isMatch;
 
+                            // Update the flag
+                            hasMatch = hasMatch || isMatch;
+
                             // Break the loop if there is a match to avoid unnecessary iterations
                             if (isMatch)
                                 break;
@@ -56,12 +67,25 @@ public partial class HomePage : ContentPage
                 }
             }
         }
+
+        // Show/hide the "Not found" layout based on search results
+        notFoundLayout.IsVisible = !hasMatch;
+    }
+
+    private async void LogoutButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new MainPage()).ConfigureAwait(false);
+    }
+    private async void ReportBugButtonClicked(object sender, EventArgs e)
+    {
+
     }
 
     private async void btnOngalafight(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new OngalaFightPage()).ConfigureAwait(false);
     }
+
     private async void btnBulgariaCreation(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new BulgariaCreationPage()).ConfigureAwait(false);
@@ -69,6 +93,10 @@ public partial class HomePage : ContentPage
 
     private void Button2Tapped(object sender, EventArgs e)
     {
-        
+
+    }
+    private void AddButtonClicked(object sender, EventArgs e)
+    {
+
     }
 }
