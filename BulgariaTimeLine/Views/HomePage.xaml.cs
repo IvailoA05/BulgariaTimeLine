@@ -78,7 +78,7 @@ public partial class HomePage : ContentPage
     }
     private async void ReportBugButtonClicked(object sender, EventArgs e)
     {
-
+        await Navigation.PushAsync(new ReportPage()).ConfigureAwait(false);
     }
 
     private async void btnOngalafight(object sender, EventArgs e)
@@ -95,8 +95,8 @@ public partial class HomePage : ContentPage
     {
 
     }
-    private void AddButtonClicked(object sender, EventArgs e)
+    private async void AddButtonClicked(object sender, EventArgs e)
     {
-
+        await Navigation.PushAsync(new ReportPage()).ConfigureAwait(false);
     }
 }
