@@ -9,7 +9,8 @@ public partial class App : Application
 		InitializeComponent();
 
 		MainPage = new AppShell();
-	}
+        Application.Current.UserAppTheme = AppTheme.Light;
+    }
     static DatabaseHelper database;
 
     // Create the database connection as a singleton.
