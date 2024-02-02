@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BulgariaTimeLine.AnhialoBattlePage"
+             Title="Битката при Анхиало">
+    <ScrollView>
+        <StackLayout Padding="16">
+
+
+            <Label Text="Битката при Анхиало"
+               FontSize="28"
+               FontAttributes="Bold"
+               Margin="0,0,0,10"
+               TextColor="Black"/>
+
+            <Label Text="708г."
+               FontSize="24"
+               FontAttributes="Bold"
+               Margin="0,0,0,10"
+               TextColor="Black"/>
+
+
+            <Image Source="anhialo_battle_708.jpg" 
+               Aspect="AspectFill"
+               HeightRequest="200"
+               Margin="0,0,0,10"/>
+
+
+            <Label Text="Причини:"
+       FontAttributes="Bold"
+       FontSize="20"
+       TextColor="Black"/>
+            <Label Text="През 705 г., българският кан Тервел съдейства за възстановяването на византийския император Юстиниан II след 10-годишно заточение. В благодарност, Юстиниан награждава българите със значителни подаръци: злато, сребро, коприна, областта 'Загоре' и висока византийска титла, 'кесар', както и издига статуя на Тервел в Константинополския хиподрум."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Label Text="Военни действия:"
+       FontAttributes="Bold"
+       FontSize="20"
+       TextColor="Black"/>
+            <Label Text="През 708 г., Юстиниан II решава да отнеме подаръците, включително стратегическия регион Загоре. В битката при Анхиало, българската армия, изчакала в планините, неочаквано атакува византийците и ги разгромява. След три дни блокиран в крепостта, императорът успява да избяга тайно, въпреки поражението."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Label Text="Последици:"
+       FontAttributes="Bold"
+       FontSize="20"
+       TextColor="Black"/>
+            <Label Text="България утвърждава позициите си в новите територии, включително областта Загоре. През 711 г., Юстиниан II отново търси помощ от Тервел, като му предоставя свободен коридор за войската си. Тервел изпраща малка войска, която допринася за загубата на императора, който по-късно губи главата си. Това събитие остава в историята като краят на византийската власт на Юстиниан II и подчертава мощта, и влиянието на България в този период."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Image Source="battle_of_anchialus_map.png" 
+       Aspect="AspectFit"
+       WidthRequest="300"
+       HeightRequest="215"
+       Margin="0,0,0,10"/>
+            <Image Source="battle_map_708.jpg" 
+       Aspect="AspectFit"
+       WidthRequest="300"
+       HeightRequest="215"
+       Margin="0,0,0,10"/>
+            
+            <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,15,10,10"/>
+            <Label Text="Ако искате да разберете повече по темата, може да гледате видеото на 'Българска история'!"
+               FontSize="18"
+               FontAttributes="Bold"
+               Margin="0,0,0,20"
+               TextColor="Black"/>
+
+            <WebView>
+                <WebView.Source>
+                    <HtmlWebViewSource Html="{Binding YouTubeHtml}" />
+                </WebView.Source>
+            </WebView>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

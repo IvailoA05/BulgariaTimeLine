@@ -56,13 +56,13 @@
             <!-- Button 2 -->
             <Frame BackgroundColor="White" CornerRadius="5" HasShadow="True" Margin="0,10,0,10">
                 <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="Button2Tapped" />
+                    <TapGestureRecognizer Tapped="btnAnhialoBattle" />
                 </Frame.GestureRecognizers>
-                <StackLayout>
-                    <Label Text="Button 2" FontAttributes="Bold" TextColor="Black" FontSize="20" />
-                    <Label Text="Title 2" FontAttributes="Bold" TextColor="Black" FontSize="18" />
-                    <Label Text="Description 2" TextColor="Black" />
-                </StackLayout>
-            </Frame>
+               <StackLayout>
+                <Label Text="Битката при Анхиало" TextColor="Black" BackgroundColor="White" FontSize="20"/>
+                <Label Text="708г." FontAttributes="Bold" TextColor="Black" FontSize="30"/>
+                <Label Text="Тагове: Хан Тервел, Византия, Юстиниан II, Загоре" TextColor="Black" />
+               </StackLayout>
+        </Frame>
         </VerticalStackLayout>
 </ContentPage>
