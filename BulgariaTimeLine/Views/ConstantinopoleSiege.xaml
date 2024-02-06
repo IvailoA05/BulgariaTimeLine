@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BulgariaTimeLine.ConstantinopoleSiege"
+             Title="Обсада на Константинопол">
+    <ScrollView>
+        <StackLayout Padding="16">
+            <Label Text="Обсада на Константинопол"
+               FontSize="28"
+               FontAttributes="Bold"
+               Margin="0,0,0,10"
+               TextColor="Black"/>
+
+            <Label Text="717-718г."
+               FontSize="24"
+               FontAttributes="Bold"
+               Margin="0,0,0,10"
+               TextColor="Black"/>
+
+
+            <Image Source="constantinopole_siege.jpg" 
+               Aspect="AspectFill"
+               HeightRequest="200"
+               Margin="0,0,0,10"/>
+
+            <Label Text="През есента на 717 година, огромна арабска армия, водена от халиф Сюлейман ибн Абдул-Малик по суша и от Маслама Ибн Абдел-Малик по море, обсаждат Константинопол от всички страни. През пролетта на 718 година, българският хан Тервел събира войска и стига близо до града. Той разбира, че арабското нашествие ще продължи и след падането на Константинопол, и затова приема молбата за помощ."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Label Text="В началото на войната, българите разгромяват четирихилядната арабска армия, командвана от Маслама. След поражението, Маслама свързва противоположните брегове на морето с два големи вала и се укрепва с 20 000 войски. Но дори с такава сила, арабите биват разгромени отново от българите."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Label Text="Блокирани от българите на сушата, арабите изтърпяват тежка зима, като много от тях умират от болести и глад. През пролетта на 718 година, хан Тервел нанася поредното поражение на арабите, което допълнително отслабва техните редици."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Label Text="На 15 август 718 година, арабите се оттеглят от Константинопол. В резултат на битката, Византия е спасена от разгром, а югоизточна Европа е запазена от арабското нашествие. Българите играят ключова роля в това събитие, като със своите победи спират напредъка на арабската армия и защитават християнския свят от арабите."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Image Source="walls_of_constantinopole.jpg" 
+       Aspect="AspectFit"
+       WidthRequest="300"
+       HeightRequest="215"
+       Margin="0,0,0,0"/>
+
+            <Label Text="Снимка: Крепостните стени на Константинопол"
+       FontSize="16"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="30,0,0,10"/>
+
+            <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,15,10,10"/>
+            <Label Text="Ако искате да разберете повече по темата, може да гледате видеото на 'Българска история'!"
+               FontSize="18"
+               FontAttributes="Bold"
+               Margin="0,0,0,20"
+               TextColor="Black"/>
+
+            <WebView>
+                <WebView.Source>
+                    <HtmlWebViewSource Html="{Binding YouTubeHtml}" />
+                </WebView.Source>
+            </WebView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

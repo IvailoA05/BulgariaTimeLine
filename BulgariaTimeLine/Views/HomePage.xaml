@@ -63,6 +63,16 @@
                 <Label Text="708г." FontAttributes="Bold" TextColor="Black" FontSize="30"/>
                 <Label Text="Тагове: Хан Тервел, Византия, Юстиниан II, Загоре" TextColor="Black" />
                </StackLayout>
+            </Frame>
+        <Frame BackgroundColor="White" CornerRadius="5" HasShadow="True" Margin="0,10,0,10">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="btnConstantinopoleSiege" />
+            </Frame.GestureRecognizers>
+            <StackLayout>
+                <Label Text="Обсада на Константинопол" TextColor="Black" BackgroundColor="White" FontSize="20"/>
+                <Label Text="717-718г." FontAttributes="Bold" TextColor="Black" FontSize="30"/>
+                <Label Text="Тагове: Хан Тервел, Византия, Константинопол, араби" TextColor="Black" />
+            </StackLayout>
         </Frame>
-        </VerticalStackLayout>
+    </VerticalStackLayout>
 </ContentPage>
