@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BulgariaTimeLine.VerbiPassBattle"
+             Title="Битката при Върбишкия проход">
+    <ScrollView>
+        <StackLayout Padding="16">
+
+
+            <Label Text="Битката при Върбишкия проход"
+               FontSize="28"
+               FontAttributes="Bold"
+               Margin="0,0,0,10"
+               TextColor="Black"/>
+
+            <Label Text="811г."
+               FontSize="24"
+               FontAttributes="Bold"
+               Margin="0,0,0,10"
+               TextColor="Black"/>
+
+
+            <Image Source="verbi_pass_battle.png" 
+               Aspect="AspectFill"
+               HeightRequest="200"
+               Margin="0,0,0,10"/>
+
+            <Label Text="През 808-809 г., хан Крум подкрепя бунта на прабългарите в долината на река Струма и присъединява земите им към своята държава. През 809 г., българските войски завземат византийската крепост Сердика."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Label Text="През началото на 811 г., византийският император Никифор I Геник организира поход срещу Плиска. Никифор разграбва Плиска и проявява жестока бруталност към местното население. Хан Крум се опитва да предложи мир, но Никифор отхвърля предложението му и продължава напред с нашествието. Българите подготвят засади и укрепления в планините."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Label Text="На 20 юли 811 г., Никифор обсажда Плиска и през следващите три дни разрушава града. Крум се обръща към него с молба за мир, но императорът не приема и продължава с разграбването."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Label Text="След като Никифор разрушава 'Крумовата резиденция' потегля обратно за Константинопол. На 26 юли 811 г., българите заграждат входовете и изходите на планинските проходи с дървени укрепления и нападат византийските войници в теснините на Върбишкия проход и ги разбиват."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+            
+            <Label Text="Никифор пада в битката, заедно с много от неговите военачалници и войници. Гордостта на Крум от великата победа най-ясно изпъква в разказа за Никифоровата глава: 'Като отрязал главата на Никифора, Крум очистил черепа и го обковал отвън със сребро, с гордост карал славянските князе да пият.' След тази победа, България е избавена от опасността от византийско нашествие, а Крум се прославя като победител и започва да възвръща предишното положение на България в региона."
+       FontSize="18"
+       LineBreakMode="WordWrap"
+       TextColor="Black"
+       Margin="0,0,0,20"/>
+
+            <Image Source="verbi_pass_battle_811.jpg" 
+       Aspect="AspectFit"
+       WidthRequest="300"
+       HeightRequest="215"
+       Margin="0,0,0,10"/>
+
+            <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,15,10,10"/>
+            <Label Text="Ако искате да разберете повече по темата, може да гледате видеото на 'Българска история'!"
+               FontSize="18"
+               FontAttributes="Bold"
+               Margin="0,0,0,20"
+               TextColor="Black"/>
+
+            <WebView>
+                <WebView.Source>
+                    <HtmlWebViewSource Html="{Binding YouTubeHtml}" />
+                </WebView.Source>
+            </WebView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
