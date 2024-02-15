@@ -12,7 +12,10 @@ public partial class AdminPage : ContentPage
 		InitializeComponent();
 		userListView.ItemsSource = _databaseHelper.GetUsers();
     }
-
+    private async void LogoutButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new MainPage()).ConfigureAwait(false);
+    }
     private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
         var user = (User)e.Item;

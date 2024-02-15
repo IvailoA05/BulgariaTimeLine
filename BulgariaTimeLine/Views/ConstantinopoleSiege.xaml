@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BulgariaTimeLine.ConstantinopoleSiege"
+             Shell.BackgroundColor="#32a84c"
              Title="Обсада на Константинопол">
     <ScrollView>
         <StackLayout Padding="16">

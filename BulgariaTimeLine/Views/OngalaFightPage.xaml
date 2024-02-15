@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BulgariaTimeLine.OngalaFightPage"
+             Shell.BackgroundColor="#32a84c"
              Title="Битката при Онгъла">
     <ScrollView> 
     <StackLayout Padding="16">

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BulgariaTimeLine.BulgariaCreationPage"
+             Shell.BackgroundColor="#32a84c"
              Title="Създаване на Дунавска България">
     <ScrollView>
         <StackLayout Padding="16">
