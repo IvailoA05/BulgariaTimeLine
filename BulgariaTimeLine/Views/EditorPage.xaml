@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BulgariaTimeLine.EditorPage"
+             Title="EditorPage">
+  <ScrollView>
+    <StackLayout Padding="20">
+        <Label Text="Редакторски панел" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20,0,10"/>
+        <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+        
+        <Entry x:Name="titleEntryField" Placeholder="Заглавие" Text="{Binding Title}" Margin="0,0,0,10" />
+
+        <Entry x:Name="yearEntryField" Placeholder="Година на събитието" Text="{Binding Year}" Margin="0,0,0,10" />
+
+        <Entry x:Name="tagsEntryField" Placeholder="Тагове" Text="{Binding Tags}" Margin="0,0,0,10" />
+
+        <Entry x:Name="textEntryField" Placeholder="Текст на събитието" Text="{Binding Text}" Margin="0,0,0,10" />
+
+        <!-- <Image x:Name="eventImage" Source="{Binding Image}" Margin="0,0,0,10" /> -->
+
+        <!-- <Button Text="Изберете снимка" Clicked="SelectImageButton_Clicked" Margin="0,0,0,10" /> -->
+        
+        <Entry x:Name="videoEntryField" Placeholder="Линк за вграждане на видео" Text="{Binding Video}" Margin="0,0,0,10" />
+
+
+        <!-- Save Button -->
+        <Button x:Name="saveButton" Text="Запази" Clicked="SaveButtonClicked" BackgroundColor="#32a84c" TextColor="White" CornerRadius="10" FontSize="18" Margin="0,20,0,10" WidthRequest="100" />
+
+        <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+
+        <Label Text="Събития" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20,0,10"/>
+
+        <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+
+        <!-- Event List -->
+        <ListView x:Name="eventListView" ItemsSource="{Binding Events}" HasUnevenRows="True" ItemTapped="listView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                       <StackLayout Orientation="Horizontal">
+                          <Label Text="{Binding Title}" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" Margin="10"/>
+                          <Label Text="{Binding Year}" FontSize="18" VerticalOptions="Center" Margin="10"/>
+                       </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

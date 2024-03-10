@@ -16,6 +16,7 @@ namespace BulgariaTimeLine.Services
             string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "HistoryApp.db3");
             Database = new SQLiteConnection(dbPath);
             Database.CreateTable<User>();
+            Database.CreateTable<Event>();
         }
         public void InsertUser(User user)
         {
@@ -50,6 +51,27 @@ namespace BulgariaTimeLine.Services
         public List<User> GetUsers()
         {
             var res = Database.Table<User>().ToList();
+            return res;
+        }
+
+        public void InsertEvent(Event _event)
+        {
+            Database.Insert(_event);
+        }
+
+        public void UpdateEvent(Event _event)
+        {
+            Database.Update(_event);
+        }
+
+        public void DeleteEvent(Event _event)
+        {
+            Database.Delete(_event);
+        }
+
+        public List<Event> GetEvents()
+        {
+            var res = Database.Table<Event>().ToList();
             return res;
         }
     }

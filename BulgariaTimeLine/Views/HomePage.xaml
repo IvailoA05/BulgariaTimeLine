@@ -24,71 +24,25 @@
                     </StackLayout>
                 </StackLayout>
             </Grid>
-            <!-- Chapter Title -->
-            <Label Text="VII Век" FontAttributes="Bold" FontSize="24" TextColor="Black" Margin="10,0,0,10"/>
 
-            <!-- Button 1 -->
-            <Frame BackgroundColor="White" CornerRadius="5" HasShadow="True" Margin="0,0,0,10">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="btnOngalafight" />
-                </Frame.GestureRecognizers>
-                <StackLayout>
-                    <Label Text="Битката при Онгъла" TextColor="Black" BackgroundColor="White" FontSize="20"/>
-                    <Label Text="680г." FontAttributes="Bold" TextColor="Black" FontSize="30"/>
-                    <Label Text="Тагове: Хан Аспарух, Константин IV" TextColor="Black" />
-                </StackLayout>
-            </Frame>
-            <Frame BackgroundColor="White" CornerRadius="5" HasShadow="True" Margin="0,0,0,10">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="btnBulgariaCreation" />
-                </Frame.GestureRecognizers>
-                <StackLayout>
-                    <Label Text="Създаване на Дунавска България" TextColor="Black" BackgroundColor="White" FontSize="20"/>
-                    <Label Text="681г." FontAttributes="Bold" TextColor="Black" FontSize="30"/>
-                    <Label Text="Тагове: Хан Аспарух, Плиска, прабългари" TextColor="Black" />
-                </StackLayout>
-            </Frame>
-
-            <!-- Line Separator -->
-            <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
-
-            <Label Text="VIII Век" FontAttributes="Bold" FontSize="24" TextColor="Black" Margin="10,0,0,10"/>
-
-            <!-- Button 2 -->
-            <Frame BackgroundColor="White" CornerRadius="5" HasShadow="True" Margin="0,10,0,10">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="btnAnhialoBattle" />
-                </Frame.GestureRecognizers>
-                <StackLayout>
-                    <Label Text="Битката при Анхиало" TextColor="Black" BackgroundColor="White" FontSize="20"/>
-                    <Label Text="708г." FontAttributes="Bold" TextColor="Black" FontSize="30"/>
-                    <Label Text="Тагове: Хан Тервел, Византия, Юстиниан II, Загоре" TextColor="Black" />
-                </StackLayout>
-            </Frame>
-            <Frame BackgroundColor="White" CornerRadius="5" HasShadow="True" Margin="0,10,0,10">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="btnConstantinopoleSiege" />
-                </Frame.GestureRecognizers>
-                <StackLayout>
-                    <Label Text="Обсада на Константинопол" TextColor="Black" BackgroundColor="White" FontSize="20"/>
-                    <Label Text="717-718г." FontAttributes="Bold" TextColor="Black" FontSize="30"/>
-                    <Label Text="Тагове: Хан Тервел, Византия, Константинопол, араби" TextColor="Black" />
-                </StackLayout>
-            </Frame>
-            <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
-
-            <Label Text="IX Век" FontAttributes="Bold" FontSize="24" TextColor="Black" Margin="10,0,0,10"/>
-
-            <Frame BackgroundColor="White" CornerRadius="5" HasShadow="True" Margin="0,10,0,10">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="btnVerbiPassBattle"/>
-                </Frame.GestureRecognizers>
-                <StackLayout>
-                    <Label Text="Битката при Върбишкия проход" TextColor="Black" BackgroundColor="White" FontSize="20"/>
-                    <Label Text="811г." FontAttributes="Bold" TextColor="Black" FontSize="30"/>
-                    <Label Text="Тагове: Хан Крум, Византия, Никифор I, Върбишки проход" TextColor="Black" />
-                </StackLayout>
-            </Frame>
+            <ListView x:Name="eventListView" ItemsSource="{Binding Events}" HasUnevenRows="True">
+                <ListView.ItemTemplate Margin="0,0,0,10">
+                    <DataTemplate>
+                        <ViewCell>
+                            <Border BackgroundColor="White" Padding="5">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="{Binding EventId}" Tapped="onStudentSelected"/>
+                                </Border.GestureRecognizers>
+                                <StackLayout>
+                                    <Label Text="{Binding Title}" TextColor="Black" BackgroundColor="White" FontSize="20"/>
+                                    <Label Text="{Binding Year}" FontAttributes="Bold" TextColor="Black" FontSize="30"/>
+                                    <Label Text="{Binding Tags}" TextColor="Black" />
+                                </StackLayout>
+                            </Border>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

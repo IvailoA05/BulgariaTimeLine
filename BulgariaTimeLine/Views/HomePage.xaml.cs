@@ -1,75 +1,76 @@
+using BulgariaTimeLine.Services;
+using BulgariaTimeLine.Models;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
+
 namespace BulgariaTimeLine;
 
 public partial class HomePage : ContentPage
 {
+    private List<Event> Events;
+    private readonly DatabaseHelper _databaseHelper;
     public HomePage()
     {
         InitializeComponent();
+        _databaseHelper = new DatabaseHelper();
+        LoadEvents();
+        searchBar.TextChanged += OnSearchTextChanged;
     }
-
+    private void LoadEvents()
+    {
+        Events = _databaseHelper.GetEvents();
+        eventListView.ItemsSource = Events;
+    }
+    private async void onStudentSelected(object sender, EventArgs e)
+    {
+        var Parameter = ((TappedEventArgs)e).Parameter;
+        await Navigation.PushAsync(new EventView((int)Parameter)).ConfigureAwait(false);
+    }
     private void OnSearchTextChanged(object sender, TextChangedEventArgs e)
     {
-        string searchQuery = e.NewTextValue;
-
-        // Filter the content based on the search query
-        FilterContent(searchQuery);
-    }
-
-    private void FilterContent(string searchQuery)
-    {
-        // Flag to determine if there is any match
-        bool hasMatch = false;
-
-        // Iterate through the children of the VerticalStackLayout
-        foreach (var child in stackLayout.Children)
+        string searchText = e.NewTextValue.ToLower();
+        if (string.IsNullOrWhiteSpace(searchText))
         {
-            // Check if the child is a Frame
-            if (child is Frame frame)
+            if (eventListView.Parent != null)
             {
-                // Check if the Frame contains a StackLayout
-                if (frame.Content is StackLayout stackLayoutInsideFrame)
+                eventListView.ItemsSource = Events;
+            }
+            if (notFoundLayout.Parent != null)
+            {
+                notFoundLayout.IsVisible = false;
+            }
+        }
+        else
+        {
+            var filteredEvents = Events.Where(ev => ev.Title.ToLower().Contains(searchText) || ev.Year.ToLower().Contains(searchText) || ev.Tags.ToLower().Contains(searchText)).ToList();
+            if (filteredEvents.Any())
+            {
+                if (eventListView.Parent != null)
                 {
-                    // Iterate through the children of the StackLayout
-                    foreach (var element in stackLayoutInsideFrame.Children)
-                    {
-                        // Check if the element is a Label or a Button
-                        if (element is Label label)
-                        {
-                            // Check if the label's text contains the search query
-                            bool isMatch = label.Text.Contains(searchQuery, StringComparison.OrdinalIgnoreCase);
-
-                            // Update the visibility of the Frame based on the search result
-                            frame.IsVisible = isMatch;
-
-                            // Update the flag
-                            hasMatch = hasMatch || isMatch;
-
-                            // Break the loop if there is a match to avoid unnecessary iterations
-                            if (isMatch)
-                                break;
-                        }
-                        else if (element is Button button)
-                        {
-                            // Check if the button's text contains the search query
-                            bool isMatch = button.Text.Contains(searchQuery, StringComparison.OrdinalIgnoreCase);
-
-                            // Update the visibility of the Frame based on the search result
-                            frame.IsVisible = isMatch;
-
-                            // Update the flag
-                            hasMatch = hasMatch || isMatch;
-
-                            // Break the loop if there is a match to avoid unnecessary iterations
-                            if (isMatch)
-                                break;
-                        }
-                    }
+                    eventListView.ItemsSource = filteredEvents;
+                }
+                if (notFoundLayout.Parent != null)
+                {
+                    notFoundLayout.IsVisible = false;
+                }
+            }
+            else
+            {
+                if (eventListView.Parent != null)
+                {
+                    eventListView.ItemsSource = new List<Event>();
+                }
+                if (notFoundLayout.Parent != null)
+                {
+                    notFoundLayout.IsVisible = true;
                 }
             }
         }
-
-        // Show/hide the "Not found" layout based on search results
-        notFoundLayout.IsVisible = !hasMatch;
+    }
+    protected override void OnDisappearing()
+    {
+        base.OnDisappearing();
+        searchBar.TextChanged -= OnSearchTextChanged;
     }
 
     private async void LogoutButtonClicked(object sender, EventArgs e)
