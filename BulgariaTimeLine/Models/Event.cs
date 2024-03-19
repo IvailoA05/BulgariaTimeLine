@@ -15,7 +15,7 @@ namespace BulgariaTimeLine.Models
         public string Year { get; set; }
         public string Tags { get; set; }
         public string Text { get; set; }
-        //public byte[] Image { get; set; }
+        public string Image { get; set; }
         public string Video { get; set; }
     }
 }

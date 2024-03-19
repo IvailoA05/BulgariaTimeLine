@@ -16,13 +16,17 @@
 
         <Entry x:Name="textEntryField" Placeholder="Текст на събитието" Text="{Binding Text}" Margin="0,0,0,10" />
 
-        <!-- <Image x:Name="eventImage" Source="{Binding Image}" Margin="0,0,0,10" /> -->
-
-        <!-- <Button Text="Изберете снимка" Clicked="SelectImageButton_Clicked" Margin="0,0,0,10" /> -->
-        
         <Entry x:Name="videoEntryField" Placeholder="Линк за вграждане на видео" Text="{Binding Video}" Margin="0,0,0,10" />
 
+        <Button x:Name="uploadImageButton" Text="Качи снимка" Clicked="UploadImageButtonClicked" BackgroundColor="#0124E4" TextColor="White" CornerRadius="10" FontSize="18" Margin="0,10,0,10" HorizontalOptions="Center" WidthRequest="180" HeightRequest="45" />
 
+        <Image x:Name="uploadedImage" BackgroundColor="Transparent" Aspect="AspectFit" IsVisible="False" Margin="0,10,0,0">
+           <Image.Source>
+              <FileImageSource File="{Binding Image}" />
+           </Image.Source>
+        </Image>
+
+            
         <!-- Save Button -->
         <Button x:Name="saveButton" Text="Запази" Clicked="SaveButtonClicked" BackgroundColor="#32a84c" TextColor="White" CornerRadius="10" FontSize="18" Margin="0,20,0,10" WidthRequest="100" />
 

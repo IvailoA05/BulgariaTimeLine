@@ -21,7 +21,7 @@ public partial class HomePage : ContentPage
         Events = _databaseHelper.GetEvents();
         eventListView.ItemsSource = Events;
     }
-    private async void onStudentSelected(object sender, EventArgs e)
+    private async void onEventSelected(object sender, EventArgs e)
     {
         var Parameter = ((TappedEventArgs)e).Parameter;
         await Navigation.PushAsync(new EventView((int)Parameter)).ConfigureAwait(false);

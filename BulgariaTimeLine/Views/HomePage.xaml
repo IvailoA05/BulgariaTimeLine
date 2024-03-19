@@ -31,7 +31,7 @@
                         <ViewCell>
                             <Border BackgroundColor="White" Padding="5">
                                 <Border.GestureRecognizers>
-                                    <TapGestureRecognizer CommandParameter="{Binding EventId}" Tapped="onStudentSelected"/>
+                                    <TapGestureRecognizer CommandParameter="{Binding EventId}" Tapped="onEventSelected"/>
                                 </Border.GestureRecognizers>
                                 <StackLayout>
                                     <Label Text="{Binding Title}" TextColor="Black" BackgroundColor="White" FontSize="20"/>

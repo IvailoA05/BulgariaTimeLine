@@ -1,29 +1,46 @@
 using BulgariaTimeLine.Services;
 using BulgariaTimeLine.Models;
-using System.ComponentModel.DataAnnotations.Schema;
-//using static Android.Print.PrintAttributes;
+using Plugin.Media;
 
 namespace BulgariaTimeLine;
 
 public partial class EditorPage : ContentPage
 {
     private DatabaseHelper _databaseHelper = new DatabaseHelper();
-    //private MediaFile _selectedImageFile;
+    private string path;
     public EditorPage()
 	{
 		InitializeComponent();
         eventListView.ItemsSource = _databaseHelper.GetEvents();
     }
-    //private async void SelectImageButton_Clicked(object sender, EventArgs e)
-    //{
-    //    //var mediaPicker = new MediaPicker();
-    //    //_selectedImageFile = await mediaPicker.PickPhotoAsync();
+    async void UploadImageButtonClicked(object sender, EventArgs e)
+    {
+        if (!CrossMedia.Current.IsPickPhotoSupported)
+        {
+            await DisplayAlert("Грешка!", "Снимката не се поддържа!", "Ok");
+            return;
+        }
+        var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+        {
+            PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
 
-    //    //if (_selectedImageFile != null)
-    //    {
-    //        //eventImage.Source = ImageSource.FromStream(() => _selectedImageFile.OpenReadAsync().Result);
-    //    }
-    //}
+        });
+
+        if (file == null)
+            return;
+
+        path = file.Path;
+
+        //await DisplayAlert("Снимките се запазват в: ", file.Path, "OK");
+        await DisplayAlert("Готово", "Снимката е качена успешно! ", "OK");
+
+        uploadedImage.Source = ImageSource.FromStream(() =>
+        {
+            var stream = file.GetStream();
+            file.Dispose();
+            return stream;
+        });
+    }
     private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
         var _event = (Event)e.Item;
@@ -37,7 +54,7 @@ public partial class EditorPage : ContentPage
                 yearEntryField.Text = _event.Year;
                 tagsEntryField.Text = _event.Tags;
                 textEntryField.Text = _event.Text;
-               // eventImage.Source = ImageSource.FromStream(() => new MemoryStream(_event.Image));
+               // Da izmislq snimkata
                 videoEntryField.Text = _event.Video;
                 break;
             case "Delete":
@@ -54,7 +71,6 @@ public partial class EditorPage : ContentPage
         string year = yearEntryField.Text;
         string tags = tagsEntryField.Text;
         string text = textEntryField.Text;
-        //Da imzislq kak da stane tva sus snimkata
         string video = videoEntryField.Text;
         var newEvent = new Event
         {
@@ -62,7 +78,7 @@ public partial class EditorPage : ContentPage
             Year = year,
             Tags = tags,
             Text = text,
-            //Snimkata tuk
+            Image = path,
             Video = video,
         };
         if (_editId == 0)
