@@ -3,44 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BulgariaTimeLine.AdminPage"
              Shell.NavBarIsVisible="False">
-    <StackLayout Padding="20">
-        <Grid Grid.Row="0">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="EndAndExpand">
-                <Image Source="home_screen_logo.png" WidthRequest="200" HeightRequest="35" Margin="0,10,130,5"/>
-                <!-- Logout Button -->
-                <ImageButton Source="logout.png" Clicked="LogoutButtonClicked" BackgroundColor="Transparent" HeightRequest="35" WidthRequest="35" Margin="10,0,10,0"/>
-            </StackLayout>
-        </Grid>
-        <Label Text="Администраторски панел" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20,0,10"/>
-        <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
-        <!-- Entry for Username -->
-        <Entry x:Name="usernameEntryField" Placeholder="Име или имейл" Text="{Binding Username}" Margin="0,0,0,10" />
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Grid Grid.Row="0">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="EndAndExpand">
+                    <Image Source="home_screen_logo.png" WidthRequest="200" HeightRequest="35" Margin="0,10,130,5"/>
+                    <!-- Logout Button -->
+                    <ImageButton Source="logout.png" Clicked="LogoutButtonClicked" BackgroundColor="Transparent" HeightRequest="35" WidthRequest="35" Margin="10,0,10,0"/>
+                </StackLayout>
+            </Grid>
+            <Label Text="Администраторски панел" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20,0,10"/>
+            <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+            <!-- Entry for Username -->
+            <Entry x:Name="usernameEntryField" Placeholder="Име или имейл" Text="{Binding Username}" Margin="0,0,0,10" />
 
-        <!-- Entry for Password -->
-        <Entry x:Name="passwordEntryField" Placeholder="Парола" Text="{Binding Password}" IsPassword="True" Margin="0,0,0,10" />
-        
+            <!-- Entry for Password -->
+            <Entry x:Name="passwordEntryField" Placeholder="Парола" Text="{Binding Password}" IsPassword="True" Margin="0,0,0,10" />
 
-        <!-- Save Button -->
-        <Button x:Name="saveButton" Text="Запази" Clicked="SaveButtonClicked" BackgroundColor="#32a84c" TextColor="White" CornerRadius="10" FontSize="18" Margin="0,20,0,10" WidthRequest="100" />
 
-        <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
-        
-        <Label Text="Регистрирани профили" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20,0,10"/>
+            <!-- Save Button -->
+            <Button x:Name="saveButton" Text="Запази" Clicked="SaveButtonClicked" BackgroundColor="#32a84c" TextColor="White" CornerRadius="10" FontSize="18" Margin="0,20,0,10" WidthRequest="100" />
 
-        <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
-        
-        <!-- User List -->
-        <ListView x:Name="userListView" ItemsSource="{Binding Users}" HasUnevenRows="True" ItemTapped="listView_ItemTapped">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="{Binding Username}" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" Margin="10"/>
-                            <Label Text="{Binding Password}" FontSize="18" VerticalOptions="Center" Margin="10"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+            <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+
+            <Label Text="Управление на събитията" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20,0,10"/>
+
+            <Button x:Name="editorButton" Text="Към редакторския панел" Clicked="EditorButtonClicked" BackgroundColor="#00B5F9" TextColor="White" CornerRadius="10" FontSize="16" Margin="0,20,0,10" WidthRequest="250" />
+
+            <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+
+            <Label Text="Регистрирани профили" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20,0,10"/>
+
+            <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"/>
+
+            <!-- User List -->
+            <ListView x:Name="userListView" ItemsSource="{Binding Users}" HasUnevenRows="True" ItemTapped="listView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Username}" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" Margin="10"/>
+                                <Label Text="{Binding Password}" FontSize="18" VerticalOptions="Center" Margin="10"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

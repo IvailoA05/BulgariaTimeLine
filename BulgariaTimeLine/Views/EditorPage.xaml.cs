@@ -44,20 +44,20 @@ public partial class EditorPage : ContentPage
     private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
         var _event = (Event)e.Item;
-        var action = await DisplayActionSheet("Select an option", "Cancel", null, "Edit", "Delete");
+        var action = await DisplayActionSheet("Изберете опция", "Откажи", null, "Редактирай", "Изтрий");
 
         switch (action)
         {
-            case "Edit":
+            case "Редактирай":
                 _editId = _event.EventId;
                 titleEntryField.Text = _event.Title;
                 yearEntryField.Text = _event.Year;
                 tagsEntryField.Text = _event.Tags;
                 textEntryField.Text = _event.Text;
-               // Da izmislq snimkata
+                path = _event.Image;
                 videoEntryField.Text = _event.Video;
                 break;
-            case "Delete":
+            case "Изтрий":
                 _databaseHelper.DeleteEvent(_event);
                 eventListView.ItemsSource = _databaseHelper.GetEvents();
                 break;
@@ -71,6 +71,7 @@ public partial class EditorPage : ContentPage
         string year = yearEntryField.Text;
         string tags = tagsEntryField.Text;
         string text = textEntryField.Text;
+        string image = path;
         string video = videoEntryField.Text;
         var newEvent = new Event
         {
@@ -78,7 +79,7 @@ public partial class EditorPage : ContentPage
             Year = year,
             Tags = tags,
             Text = text,
-            Image = path,
+            Image = image,
             Video = video,
         };
         if (_editId == 0)
@@ -95,7 +96,7 @@ public partial class EditorPage : ContentPage
                 existingEvent.Year = newEvent.Year;
                 existingEvent.Tags = newEvent.Tags;
                 existingEvent.Text = newEvent.Text;
-                //Snimkata
+                existingEvent.Image = newEvent.Image;
                 existingEvent.Video = newEvent.Video;
 
                 // Save changes to the database

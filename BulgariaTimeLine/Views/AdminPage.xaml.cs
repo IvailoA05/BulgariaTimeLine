@@ -19,16 +19,16 @@ public partial class AdminPage : ContentPage
     private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
         var user = (User)e.Item;
-        var action = await DisplayActionSheet("Select an option", "Cancel", null, "Edit", "Delete");
+        var action = await DisplayActionSheet("Изберете опция", "Откажи", null, "Редактирай", "Изтрий");
 
         switch (action)
         {
-            case "Edit":
+            case "Редактирай":
                 _editId = user.Id;
                 usernameEntryField.Text = user.Username;
                 passwordEntryField.Text = user.Password;
                 break;
-            case "Delete":
+            case "Изтрий":
                 _databaseHelper.DeleteUser(user);
                 userListView.ItemsSource = _databaseHelper.GetUsers();
                 break;
@@ -66,5 +66,9 @@ public partial class AdminPage : ContentPage
         passwordEntryField.Text = String.Empty;
         //Reloading the user list
         userListView.ItemsSource = _databaseHelper.GetUsers();
+    }
+    private async void EditorButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new EditorPage()).ConfigureAwait(false);
     }
 }

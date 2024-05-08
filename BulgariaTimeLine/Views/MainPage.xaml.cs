@@ -5,38 +5,41 @@ namespace BulgariaTimeLine;
 
 public partial class MainPage : ContentPage
 {
-        private DatabaseHelper _databaseHelper = new DatabaseHelper();
-        public MainPage()
-        {
-            InitializeComponent();
-        }
+    private DatabaseHelper _databaseHelper = new DatabaseHelper();
+    public MainPage()
+    {
+        InitializeComponent();
+    }
 
-        private async void OnLoginButtonClicked(object sender, EventArgs e)
+    private async void OnLoginButtonClicked(object sender, EventArgs e)
+    {
+        string username = UsernameEntry.Text;
+        string password = PasswordEntry.Text;
+
+        if (username == null || password == null)
         {
-            string username = UsernameEntry.Text;
-            string password = PasswordEntry.Text;
- 
-            if (username == null || password == null)
-            {
-            await DisplayAlert("Грешка!","Моля попълнете всички полета!", "OК");
+            await DisplayAlert("Грешка!", "Моля попълнете всички полета!", "OК");
             return;
-            }
-            if (username == "admin" && password == "1234567")
+        }
+        if (_databaseHelper.ValidateUser(username, password))
+        {
+            if (username == "admin")
             {
-            await Navigation.PushAsync(new EditorPage()).ConfigureAwait(false);
-            }
-            else if (_databaseHelper.ValidateUser(username, password))
-            {
-            await Navigation.PushAsync(new HomePage()).ConfigureAwait(false);
+                await Navigation.PushAsync(new AdminPage()).ConfigureAwait(false);
             }
             else
             {
-            await DisplayAlert("Грешка!", "Невалидно име или парола!", "OK").ConfigureAwait(false);
+                await Navigation.PushAsync(new HomePage()).ConfigureAwait(false);
             }
         }
-         private async void CreateAccountButtonClicked(object sender, EventArgs e)
-         {
-           await Navigation.PushAsync(new RegisterPage());
-         }
+        else
+        {
+            await DisplayAlert("Грешка!", "Невалидно име или парола!", "OK").ConfigureAwait(false);
+        }
+    }
+    private async void CreateAccountButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new RegisterPage());
+    }
 }
 

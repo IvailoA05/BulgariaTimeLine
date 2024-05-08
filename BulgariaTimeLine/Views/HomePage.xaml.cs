@@ -196,29 +196,6 @@ public partial class HomePage : ContentPage
     {
         await Navigation.PushAsync(new ReportPage()).ConfigureAwait(false);
     }
-
-    private async void btnOngalafight(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new OngalaFightPage()).ConfigureAwait(false);
-    }
-
-    private async void btnBulgariaCreation(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new BulgariaCreationPage()).ConfigureAwait(false);
-    }
-
-    private async void btnAnhialoBattle(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new AnhialoBattlePage()).ConfigureAwait(false);
-    }
-    private async void btnConstantinopoleSiege(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new ConstantinopoleSiege()).ConfigureAwait(false);
-    }
-    private async void btnVerbiPassBattle(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new VerbiPassBattle()).ConfigureAwait(false);
-    }
     private async void AddButtonClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new ReportPage()).ConfigureAwait(false);

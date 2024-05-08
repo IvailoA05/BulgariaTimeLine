@@ -33,18 +33,6 @@
             TextColor="Black"
             Margin="0,0,0,20"/>
 
-
-            <!--<Image Source="battle_of_anchialus_map.png" 
-       Aspect="AspectFit"
-       WidthRequest="300"
-       HeightRequest="215"
-       Margin="0,0,0,10"/>
-            <Image Source="battle_map_708.jpg" 
-       Aspect="AspectFit"
-       WidthRequest="300"
-       HeightRequest="215"
-       Margin="0,0,0,10"/>-->
-
             <BoxView BackgroundColor="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,15,10,10"/>
             <Label Text="Ако искате да разберете повече по темата, може да гледате видеото на 'Българска история'!"
                FontSize="18"
