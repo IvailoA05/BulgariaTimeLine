@@ -7,7 +7,7 @@
     <VerticalStackLayout>
         <StackLayout Margin="20">
             <Label Text="Докладвайте проблем" FontSize="Large" HorizontalOptions="Center" Margin="0,30,0,20"/>
-            <Label Text="При проблем, свържете се с нас, като попълните полетата долу и опишете проблема!" FontSize="Small" HorizontalOptions="Center" Margin="0,5,0,70"/>
+            <Label Text="При проблем се свържете с нас, като попълните полетата долу и опишете проблема!" FontSize="Small" HorizontalOptions="Center" Margin="0,5,0,70"/>
 
             <Frame BackgroundColor="White" CornerRadius="10" Padding="20">
                 <StackLayout>

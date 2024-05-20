@@ -14,7 +14,7 @@
                Margin="0,0,0,10"
                TextColor="Black"/>
 
-            <Label Text="{Binding Event.Year}"
+            <Label Text="{Binding Event.Year, StringFormat='{0}г.'}"
                FontSize="24"
                FontAttributes="Bold"
                Margin="0,0,0,10"

@@ -31,8 +31,9 @@
                         <ViewCell>
                             <StackLayout>
                                 <!-- Display Century -->
-                                <Label Text="{Binding Century}" TextColor="Black" BackgroundColor="White" FontSize="20"/>
-
+                                <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,15,0,10"/>
+                                <Label Text="{Binding Century, StringFormat='{0} Век'}" TextColor="Black" FontAttributes="Bold" BackgroundColor="White" FontSize="24"/>
+                  
                                 <CollectionView ItemsSource="{Binding Events}">
                                     <CollectionView.ItemTemplate>
                                         <DataTemplate>
@@ -42,7 +43,7 @@
                                                 </Border.GestureRecognizers>
                                                 <StackLayout BackgroundColor="White" Padding="5">
                                                     <Label Text="{Binding Title}" TextColor="Black" FontSize="20"/>
-                                                    <Label Text="{Binding Year}" FontAttributes="Bold" TextColor="Black" FontSize="30"/>
+                                                    <Label Text="{Binding Year, StringFormat='{0}г.'}" FontAttributes="Bold" TextColor="Black" FontSize="30"/>
                                                     <Label Text="{Binding Tags}" TextColor="Black"/>
                                                 </StackLayout>
                                             </Border>
